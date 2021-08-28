@@ -16,7 +16,7 @@ function App() {
   const [isModal, setIsModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleEmailSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
