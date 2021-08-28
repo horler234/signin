@@ -8,7 +8,7 @@ import {
   SubmitBtn,
 } from "./styles/card";
 import { Modal } from "./styles/modal";
-import { BrowserRouter, Link, useHistory } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import { useEffect } from "react";
 
 function App() {
